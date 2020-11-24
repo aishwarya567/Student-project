@@ -9,4 +9,7 @@ class CreateStudents < ActiveRecord::Migration[6.0]
       t.timestamps
     end
   end
+  def change1
+    remove_column : students, :stu_id
+  end
 end
