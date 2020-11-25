@@ -1,2 +1,21 @@
 <title>student app</title>
-<label> Student ID</label>
+<h1>STUDENT DETAILS</h1>
+
+<table>
+    <thead>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Address</th>
+    <th>Percentage</th>
+    </thead>
+    <% @students.each do |student| %>
+    <tr>
+        <td><%= student.name %></td>
+        <td><%= student.age %></td>
+        <td><%= student.address %></td>
+        <td><%= student.percentage %></td>
+        <td><%= link_to "Create Student", new_student_path %></td>
+    </tr>
+    <% end %>
+    </table>
+    
