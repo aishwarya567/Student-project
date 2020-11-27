@@ -1,4 +1,7 @@
 class StudentsController < ApplicationController
+  def /
+    @students = Student.all
+  end
   def index
     @students = Student.all
   end
@@ -30,9 +33,8 @@ class StudentsController < ApplicationController
         render :edit
       end
     end
-    def destroy
-      @students = Student.find(params[:id])
-      @students.destroy
+    def delete
+      @students = Student.find(params[:id]).destroy
       redirect_to students_path
     end
   def student_params
