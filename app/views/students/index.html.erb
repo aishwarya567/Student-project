@@ -1,9 +1,13 @@
 <title>student app</title>
-<h1>STUDENT DETAILS</h1>
-
+<h1 style='color:blue; text-align:center'>STUDENT DATA </h1>
+<body style=' margin: 30px;
+  width: 50%;
+  border: 2px solid green;
+  padding: 10px 40px 30px;'>
+<div style ='text-align:center'>
 <table>
     <thead>
-    <th>Name</th>
+    <th>Name</th><br>
     <th>Age</th>
     <th>Address</th>
     <th>Percentage</th>
@@ -14,8 +18,14 @@
         <td><%= student.age %></td>
         <td><%= student.address %></td>
         <td><%= student.percentage %></td>
-        <td><%= link_to "Create Student", new_student_path %></td>
-    </tr>
+        <td>
+         <%= link_to "Edit", edit_student_path(student) %>
+         <%= link_to "Delete", student, method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+        </td>
+        </tr>
+        
     <% end %>
-    </table>
-    
+    </table><br>
+</div>
+    <%= link_to "Create", new_student_path %>
+</body>

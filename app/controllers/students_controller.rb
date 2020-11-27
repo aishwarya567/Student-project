@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
   def show
-    @product = Student.find(params[:id])
+    @students = Student.find(params[:id])
   end
 
   def new
@@ -17,5 +17,25 @@ class StudentsController < ApplicationController
       else
         render :new
       end
+  end
+  def edit
+    @students = Student.find(params[:id])
+  end
+
+  def update
+    @students =Student.find(params[:id])
+      if @students.update(student_params)
+        redirect_to students_path
+      else
+        render :edit
+      end
+    end
+    def destroy
+      @students = Student.find(params[:id])
+      @students.destroy
+      redirect_to students_path
+    end
+  def student_params
+    params.require(:student).permit(:name,:age,:address,:percentage)
   end
 end
