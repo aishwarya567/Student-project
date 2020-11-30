@@ -1,21 +1,23 @@
+
 <%= form_for @students do |f| %>
-<div>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</div><br>
-<div>
-  <%= f.label :age %>
-  <%= f.number_field :age %>
-</div><br>
-<div>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-</div><br>
-<div>
-  <%= f.label :percentage %>
-  <%= f.number_field :percentage %>
-</div><br>
-<div>
-  <%= f.submit %>
-</div>
+    <div>
+        Name <br>
+              <%= f.text_field :name %>
+    </div><br>
+        <div>
+            Age<br>  
+                <%= f.number_field :age %>
+    </div><br>
+        <div>
+            Address<br>
+                <%= f.text_field :address %>
+    </div><br>
+         <div>
+            Percentage <br>
+                <%= f.number_field :percentage %>
+    </div><br>
+          <div>
+                <%= f.submit "Update"%>
+                <%= link_to 'Back', new_student_path %>
+    </div>
 <% end %>
