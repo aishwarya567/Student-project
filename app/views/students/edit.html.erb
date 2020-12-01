@@ -1,23 +1,26 @@
+<body style="background-color:lightgrey">
+<div class="container p-3 my-3 border">
+<h1 style ="text-align:center">Update Student Details</h1>
+</div>
 
+<div class="container p-3 my-3 border">
 <%= form_for @students do |f| %>
-    <div>
+    <div class="form_group">
         Name <br>
-              <%= f.text_field :name %>
-    </div><br>
-        <div>
-            Age<br>  
-                <%= f.number_field :age %>
-    </div><br>
-        <div>
-            Address<br>
-                <%= f.text_field :address %>
-    </div><br>
-         <div>
-            Percentage <br>
-                <%= f.number_field :percentage %>
-    </div><br>
-          <div>
-                <%= f.submit "Update"%>
-                <%= link_to 'Back', new_student_path %>
+              <%= f.text_field :name, {class: "form-control", placeholder: "Enter name"} %>
     </div>
+        <div class="form-group">
+            Age<br>  
+                <%= f.number_field :age, {class: "form-control", placeholder: "Enter Age"} %>
+    </div>
+        <div class= "form-group">
+            Address<br>
+                <%= f.text_field :address, {class: "form-control", placeholder: "Enter address"} %>
+    </div>
+         <div class="form-group">
+            Percentage <br>
+                <%= f.number_field :percentage, {class: "form-control", placeholder: "Enter your percentage"} %>
+    </div>
+                <%= f.submit "Update", class: "btn btn-outline-success"%>
 <% end %>
+</body>
