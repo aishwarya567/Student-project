@@ -12,14 +12,14 @@
     <th>Name</th><br>
     <th>Age</th>
     <th>Address</th>
-    <th>Percentage</th>
+    <th>Gender</th>
     </thead>
     <% @students.each do |student| %>
     <tr>
         <td><%= student.name %></td>
         <td><%= student.age %></td>
         <td><%= student.address %></td>
-        <td><%= student.percentage %></td>
+        <td><%= student.gender %></td>
         <td>
          <%= link_to "Edit", edit_student_path(student) %>
          
@@ -31,4 +31,5 @@
     </table><br>
 </div>
     <%= link_to "Create", new_student_path %>
+    
 </body>

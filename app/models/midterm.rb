@@ -1,0 +1,2 @@
+class Midterm < ApplicationRecord
+end

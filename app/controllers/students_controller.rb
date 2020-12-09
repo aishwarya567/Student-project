@@ -1,10 +1,9 @@
 class StudentsController < ApplicationController
-  def /
-    @students = Student.all
-  end
+
   def index
     @students = Student.all
   end
+
   def show
     @students = Student.find(params[:id])
   end
@@ -21,6 +20,9 @@ class StudentsController < ApplicationController
         render :new
       end
   end
+
+  
+
   def edit
     @students = Student.find(params[:id])
   end
@@ -38,6 +40,6 @@ class StudentsController < ApplicationController
       redirect_to students_path
     end
   def student_params
-    params.require(:student).permit(:name,:age,:address,:percentage)
+    params.require(:student).permit(:name,:age,:address,:gender)
   end
 end

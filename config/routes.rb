@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :midterms
+  get 'midterms/index' => 'midterms#index'
 get 'students/index' => 'students#index'
 get 'students/new' => 'students#new'
 get 'students/create' => 'students#create'
@@ -8,5 +10,6 @@ post 'students/edit' => 'students#edit'
 patch 'students/update' => 'students#update'
 get 'students/destroy' => 'students#destroy'
  resources :students
+ 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

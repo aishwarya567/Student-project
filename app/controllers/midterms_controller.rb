@@ -1,0 +1,3 @@
+class MidtermsController < ApplicationController
+
+end

@@ -4,7 +4,7 @@ class CreateStudents < ActiveRecord::Migration[6.0]
       t.string :name
       t.integer :age
       t.string :address
-      t.integer :percentage
+      t.string :gender
 
 
       t.timestamps
