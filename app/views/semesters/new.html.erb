@@ -1,0 +1,13 @@
+<body style="background-color:lightgrey">
+<div class="container p-3 my-3 border">
+<h1 style ="text-align:center">Enter Student Details</h1>
+</div>
+
+<div class="container p-3 my-3 border">
+<%= form_for @semesters do |f| %>
+    <div class="form_group">
+        Name <br>
+              <%= f.text_field :sem_name, {class: "form-control"} %>
+              <%= f.number_field :student_id, {class: "form-control"} %>
+    </div>
+    <% end %>

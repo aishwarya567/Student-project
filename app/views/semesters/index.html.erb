@@ -1,0 +1,23 @@
+<title>student app</title>
+<h1 style='text-align:center'>STUDENT INFORMATION</h1>
+<body style='margin:  30px auto;
+    background-color:lightgrey;
+    width: 50%;
+    border: 2px solid black;
+    padding: 10px 40px 30px;'>
+<div style ='text-align:center'>
+
+<table class="table table-striped" style="text-align:center">
+    <thead>
+    <th>Name</th><br>
+    <th>ID</th>
+    </thead>
+    <% @semesters.each do |semester| %>
+    <tr>
+        <td><%= semester.sem_name %></td>
+        <td><%= semester.student_id %></td>
+    </tr>
+  <% end %>
+    </table><br>
+</div> 
+</body>  

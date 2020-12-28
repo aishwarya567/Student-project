@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  resources :midterms
-  get 'midterms/index' => 'midterms#index'
+  get 'semesters/index' => 'semesters#index'
+get 'semesters/new' => 'semesters#new'
+get 'semesters/create' => 'semesters#create'
+get 'semesters/index' => 'semesters#index'
+get 'semesters/show' => 'semesters#show'
+
+resources :semesters
+
 get 'students/index' => 'students#index'
 get 'students/new' => 'students#new'
 get 'students/create' => 'students#create'

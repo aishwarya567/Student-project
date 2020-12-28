@@ -1,3 +1,0 @@
-class MidtermsController < ApplicationController
-
-end
