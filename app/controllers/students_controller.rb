@@ -6,15 +6,6 @@ class StudentsController < ApplicationController
 
   def show
     @students = Student.find(params[:id])
-
-    @semesters = @students.semester.find(id)
-
-    results = []
-
-    subjects = @semesters.subjects
-    subjects.each do |subject|
-    obj = {}
-
   end
 
   def new
