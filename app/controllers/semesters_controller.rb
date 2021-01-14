@@ -2,7 +2,7 @@ class SemestersController < ApplicationController
     
     def index
         @semesters = Semester.all
-      end
+    end
     
       def show
         @semesters = Semester.find(params[:id])
@@ -21,7 +21,7 @@ class SemestersController < ApplicationController
           end
 
           def semester_params
-            params.require(:semester).permit(:sem_name, :student_id)
+            params.require(:semester).permit(:sem_name)
           end
       end
     
