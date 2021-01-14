@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: studentapp_development
+  database: student
   username: postgres
   password: password
 
@@ -59,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: studentapp_test
+  database: student_test
   useraname: postgres
   password: password
 
@@ -82,8 +82,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: studentapp_production
-  username: studentapp
-  password: <%= ENV['STUDENTAPP_DATABASE_PASSWORD'] %>
+#production:
+ # <<: *default
+  #database: studentapp_production
+  #username: studentapp
+  #password: <%= ENV['STUDENTAPP_DATABASE_PASSWORD'] %>

@@ -1,0 +1,24 @@
+<div class="row">
+	<label> USN : <%=@usn%></label>
+</div>
+<div class="row">
+	<label> NAME : <%=@student_detail.name%></label>
+</div>
+<table class = "table table-condensed table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Subject Code</th>
+      <th>Subject Name</th>
+      <th> Mark</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<%@res.each do |result| %>
+    <tr>
+      <td><%= result[:sub_code]%></td>
+      <td><%= result[:sub_name]%></td>
+      <td><%= result[:mark]%></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>

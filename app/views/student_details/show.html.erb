@@ -1,0 +1,49 @@
+<!-- <p id="notice"><%= notice %></p> -->
+<% if flash[:message] %>
+ <div style="color:Tomato;"><strong><%= flash[:message] %></strong></div>
+<% end %>
+
+<p>
+  <b>USN :</b>
+  <%= @student_detail.usn %>
+</p>
+ 
+<p>
+  <b>Name:</b>
+  <%= @student_detail.name %>
+</p>
+  
+<p>
+  <b>Gender:</b>
+  <%= @student_detail.gender %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @student_detail.address %>
+</p>
+<%= link_to "Add Results", "/student_details/#{@student_detail.id}/results/new", :class=>"btn btn-primary" %>
+  <h2>Results</h2>
+	<table>
+	  <tr>
+	    <th>USN</th>
+	    <th>Semester</th>
+	    <th>Subject</th>
+	    <th>Mark</th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	 
+		<% @res.each_with_index do |result,i| %>
+		  <tr>
+		    <td><%= result[:usn] %></td>
+		    <td><%= result[:sem] %></td>
+		    <td><%= result[:subject_code]%></td>
+		    <td><%= result[:mark]%></td>
+		    <td><%#= link_to 'Show', [subject.semester, subject] %></td>
+		    <td><%= link_to 'Edit', "/student_details/#{@results[i].student_detail_id}/results/#{@results[i].id}/edit" %></td>
+		    <td><%= link_to 'Destroy', [@results[i].student_detail, @results[i]], :confirm => 'Are you sure?',:method => :delete %></td>
+		  </tr>
+		<% end %>
+	</table>
+<%= link_to 'Back', student_details_path %>

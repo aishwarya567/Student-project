@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+ 
+<p>
+  <b>Sem No:</b>
+  <%= @semester.sem_id %>
+</p>
+ 
+<p>
+  <b>Name:</b>
+  <%= @semester.name %>
+</p>
+  
+  <h2>Subjects</h2>
+	<table>
+	  <tr>
+	    <th>Subject Code</th>
+	    <th>Name</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	 
+		<% @semester.subjects.each do |subject| %>
+		  <tr>
+		    <td><%= subject.subject_code %></td>
+		    <td><%= subject.name %></td>
+		    <td><%#= link_to 'Show', [subject.semester, subject] %></td>
+		    <td><%= link_to 'Edit', "/semesters/#{subject.semester_id}/subjects/#{subject.id}/edit" %></td>
+		    <td><%= link_to 'Destroy', [subject.semester, subject], :confirm => 'Are you sure?',
+		                                     :method => :delete %></td>
+		  </tr>
+		<% end %>
+	</table>
+<h2>Add a Subjects:</h2>
+<%= form_for([@semester, @semester.subjects.build]) do |f| %>
+  <div class="field">
+    <%= f.label :subject_code %><br />
+    <%= f.text_field :subject_code %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_semester_path(@semester) %> |
+<%= link_to 'Back', semesters_path %>

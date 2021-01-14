@@ -1,0 +1,22 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<h2>Edit results</h2>
+<%= form_with url: "/student_details/#{@student_detail_id}/results/#{@result.id}", method: :put do |form|%>
+<div class="row">
+	<%= form.label :sem_id, "Select Sem : " %>
+  <%= select_tag :sem_id, options_for_select(@semeters.collect{|s| [s.sem_id, s.id]}, params[:sem_id]), selected: @result.sem_id , :class => "form-control input-sm" %>
+</div><br>
+<div class="row" >
+	<%= form.label :sub_id, "Subject : " %>
+  <%= form.text_field :sub_id, value: @result.sub_id %>
+</div><br>
+
+<div class="row">
+	<%= form.label :mark, "Mark : " %>
+  <%= form.number_field :mark, value: @result.mark %>
+</div><br>
+<%= form.submit "Update Result" %>
+<%end%>
+
+<!-- 
+ params[:sub_id],
+ , params[:mark], -->

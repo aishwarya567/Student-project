@@ -1,0 +1,18 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<h2>Add results</h2>
+<%= form_with url: "/student_details/#{@student_detail_id}/results", method: :post do |form|%>
+<div class="row">
+	<%= form.label :sem_id, "Select Sem : " %>
+  <%= select_tag "sem_id", options_for_select(@semeters.collect{|s| [s.sem_id, s.id]}.insert(0, ["Please Select Sem", ""] ), params["sem_id"]), :class => "form-control input-sm" %>
+</div><br>
+<div class="row" >
+	<%= form.label :sub_id, "Subject : " %>
+  <%= text_field_tag :sub_id,  params[:sub_id] %>
+</div><br>
+
+<div class="row">
+	<%= form.label :mark, "Mark : " %>
+  <%= number_field_tag :mark,  params[:mark] %>
+</div><br>
+<%= form.submit "Add Result" %>
+<%end%>
