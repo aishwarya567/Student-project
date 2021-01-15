@@ -1,17 +1,8 @@
-<p id="notice"><%= notice %></p>
- 
-<p>
-  <b>Sem No:</b>
-  <%= @semester.sem_id %>
-</p>
- 
-<p>
-  <b>Name:</b>
-  <%= @semester.name %>
-</p>
-  
-  <h2>Subjects</h2>
-	<table>
+<body style="background-color:lightgrey">
+<div class="container p-3 my-3 border">
+<h1 style ="text-align:center">SUBJECTS</h1>
+</div>
+<table class="table table-striped" style="text-align:center">
 	  <tr>
 	    <th>Subject Code</th>
 	    <th>Name</th>
@@ -31,7 +22,7 @@
 		  </tr>
 		<% end %>
 	</table>
-<h2>Add a Subjects:</h2>
+<h1 style ="text-align:center">ADD SUBJECTS</h1>
 <%= form_for([@semester, @semester.subjects.build]) do |f| %>
   <div class="field">
     <%= f.label :subject_code %><br />

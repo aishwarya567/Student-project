@@ -1,3 +1,10 @@
+<body style="background-color:lightgrey">
+<div class="container p-3 my-3 border">
+<h1 style ="text-align:center">UPDATE RESULTS</h1>
+</div>
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <h2>Edit results</h2>
 <%= form_with url: "/student_details/#{@student_detail_id}/results/#{@result.id}", method: :put do |form|%>

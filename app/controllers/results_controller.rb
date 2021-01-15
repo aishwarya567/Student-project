@@ -9,7 +9,7 @@ class ResultsController < ApplicationController
 		@subjects = []
 		if params[:sem_id].present?
 			@subjects = Semester.find(params[:sem_id]).subjects
-			Rails.logger.debug "#{@subjects.count}"
+			#Rails.logger.debug "#{@subjects.count}"
 		end
 		# render json: {}, status: :ok
 	end
