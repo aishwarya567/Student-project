@@ -1,7 +1,6 @@
 <body style="background-color:lightgrey">
 <div class="container p-3 my-3 border">
-<h1 style ="text-align:center">SUBJECTS</h1>
-</div>
+<h1 style ="text-align:center">View Subjects</h1><br>
 <table class="table table-striped" style="text-align:center">
 	  <tr>
 	    <th>Subject Code</th>
@@ -21,17 +20,17 @@
 		                                     :method => :delete %></td>
 		  </tr>
 		<% end %>
-	</table>
-<h1 style ="text-align:center">ADD SUBJECTS</h1>
+	</table><br>
+<h1 style ="text-align:center">Add Subjects</h1>
 <%= form_for([@semester, @semester.subjects.build]) do |f| %>
   <div class="field">
     <%= f.label :subject_code %><br />
     <%= f.text_field :subject_code %>
-  </div>
+  </div><br>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </div>
+  </div><br>
   <div class="actions">
     <%= f.submit %>
   </div>
@@ -39,3 +38,5 @@
 
 <%= link_to 'Edit', edit_semester_path(@semester) %> |
 <%= link_to 'Back', semesters_path %>
+</div>
+</body>

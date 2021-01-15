@@ -1,15 +1,12 @@
 <title>student app</title>
-<h1 style='text-align:center'>STUDENT INFORMATION</h1>
+<h1 style='text-align:center'>STUDENT INFORMATION</h1><br><br>
 <body style='margin:  30px auto;
     background-color:lightgrey;
     width: 50%;
     border: 2px solid black;
     padding: 10px 40px 30px;'>
 <div style ='text-align:center'>
-
-
-    <%= link_to 'New Student', new_student_detail_path %>
-    <table class="table table-striped" style="text-align:center">
+<table class="table table-striped" style="text-align:center">
   <tr>
     <th>Sem No</th>
     <th>Name</th>
@@ -28,8 +25,10 @@
                                      :method => :delete %></td>
   </tr>
 <% end %>
+
 </table>
+  <%= link_to 'New Student', new_student_detail_path %>
  
-<br />
+<br/>
  
 <%#= link_to 'New Student', new_student_detail_path %>

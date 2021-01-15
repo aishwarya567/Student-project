@@ -1,15 +1,18 @@
+<body style="background-color:lightgrey">
+<div class="container p-3 my-3 border">
+<h1 style ="text-align:center">RESULT</h1><br>
 <div class="row">
 	<label> USN : <%=@usn%></label>
 </div>
 <div class="row">
 	<label> NAME : <%=@student_detail.name%></label>
-</div>
+</div><br>
 <table class = "table table-condensed table-bordered table-striped">
   <thead>
     <tr>
       <th>Subject Code</th>
       <th>Subject Name</th>
-      <th> Mark</th>
+      <th>Mark</th>
     </tr>
   </thead>
   <tbody>
@@ -20,5 +23,6 @@
       <td><%= result[:mark]%></td>
     </tr>
     <%end%>
+    </div>
   </tbody>
 </table>

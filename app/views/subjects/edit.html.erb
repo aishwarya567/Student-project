@@ -1,4 +1,7 @@
-<h1>Editing Subject</h1>
+<body style="background-color:lightgrey">
+<div class="container p-3 my-3 border">
+<h1 style ="text-align:center">Edit Subject</h1>
+
  
 <%= form_for([@semester, @subject]) do |f| %>
   <div class="field">
@@ -8,11 +11,12 @@
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </div>
+  </div><br>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>
 
 <%#= link_to 'Show', @subject %> 
 <%#= link_to 'Back', subjects_path %>

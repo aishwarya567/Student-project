@@ -1,9 +1,8 @@
 <body style="background-color:lightgrey">
 <div class="container p-3 my-3 border">
-<h1 style ="text-align:center">SEMESTER DETAILS</h1>
-</div>
+
 <%= form_for(@semester) do |f| %>
-  <% if @semester.errors.any? %>
+  <!--<% if @semester.errors.any? %>
   <div id="errorExplanation">
     <h2><%= pluralize(@semester.errors.count, "error") %> prohibited
         this semester from being saved:</h2>
@@ -13,7 +12,7 @@
     <% end %>
     </ul>
   </div>
-  <% end %>
+  <% end %>-->
  
   <div class="field">
     <%= f.label :sem_no %><br />
@@ -27,3 +26,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>

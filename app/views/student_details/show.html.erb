@@ -1,7 +1,14 @@
 <!-- <p id="notice"><%= notice %></p> -->
-<% if flash[:message] %>
+<body style="background-color:lightgrey">
+<div class="container p-3 my-3 border">
+<h1 style ="text-align:center">Add Result</h1>
+
+
+
+
+<!--<% if flash[:message] %>
  <div style="color:Tomato;"><strong><%= flash[:message] %></strong></div>
-<% end %>
+<% end %>-->
 
 <p>
   <b>USN :</b>
@@ -17,14 +24,15 @@
   <b>Gender:</b>
   <%= @student_detail.gender %>
 </p>
-
 <p>
-  <b>Address:</b>
+
+	<b>Address:</b>
+
   <%= @student_detail.address %>
-</p>
-<%= link_to "Add Results", "/student_details/#{@student_detail.id}/results/new", :class=>"btn btn-primary" %>
-  <h2>Results</h2>
-	<table>
+</p><br>
+<%= link_to "Add Results", "/student_details/#{@student_detail.id}/results/new", :class=>"btn btn-primary" %><br><br>
+
+	<table class="table table-striped" style="text-align:center">
 	  <tr>
 	    <th>USN</th>
 	    <th>Semester</th>
@@ -45,5 +53,6 @@
 		    <td><%= link_to 'Destroy', [@results[i].student_detail, @results[i]], :confirm => 'Are you sure?',:method => :delete %></td>
 		  </tr>
 		<% end %>
+		</div>
 	</table>
 <%= link_to 'Back', student_details_path %>
