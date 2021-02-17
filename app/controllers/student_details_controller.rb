@@ -37,7 +37,7 @@ class StudentDetailsController < ApplicationController
 			obj[:mark] = res.mark
 			@res << obj
 		end
-		Rails.logger.debug "#{@res}"
+	
 		respond_to do |format|
 			format.html #show.html.erb
 			format.json {render json: @student_detail}

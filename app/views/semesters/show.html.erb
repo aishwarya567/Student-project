@@ -22,6 +22,12 @@
 		<% end %>
 	</table><br>
 <h1 style ="text-align:center">Add Subjects</h1>
+	<% if @semester.errors.any? %>
+    <% @semester.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  <% end %>
 <%= form_for([@semester, @semester.subjects.build]) do |f| %>
   <div class="field">
     <%= f.label :subject_code %><br />

@@ -65,7 +65,6 @@ class SemestersController < ApplicationController
 	    format.json { head :no_content }
 	  end
 	end
-	private
 
 	def semester_params
 		params.require(:semester).permit(:sem_id,:name)

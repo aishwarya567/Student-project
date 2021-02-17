@@ -2,33 +2,28 @@
 <div class="container p-3 my-3 border">
 
 <%= form_for(@student_detail) do |f| %>
-  <!--<% if @student_detail.errors.any? %>
-  <div id="errorExplanation">
-    <h2><%= pluralize(@student_detail.errors.count, "error") %> prohibited
-        this student_detail from being saved:</h2>
-    <ul>
+ <% if @student_detail.errors.any? %>
     <% @student_detail.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
-  </div>
-  <% end %>-->
+  <% end %>
  
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name , required: true%>
   </div><br>
 	<div class="field">
     <%= f.label :usn %><br />
-    <%= f.text_field :usn %>
+    <%= f.text_field :usn , required: true %>
   </div>
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.select :gender, [["select Gender", ""], ["Male", "male"],["Female","female"]] %>
+    <%= f.select :gender, [["select Gender", ""], ["Male", "male"],["Female","female"]],required: true %>
   </div><br>
 	<div class="field">
     <%= f.label :address %><br />
-    <%= f.text_field :address %>
+    <%= f.text_field :address, required: true %>
   </div>
   <div class="actions">
     <%= f.submit %>

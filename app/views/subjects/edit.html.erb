@@ -1,11 +1,9 @@
 <body style="background-color:lightgrey">
 <div class="container p-3 my-3 border">
-<h1 style ="text-align:center">Edit Subject</h1>
-
- 
+<h1 style ="text-align:center">Edit subject</h1>
 <%= form_for([@semester, @subject]) do |f| %>
-  <div class="field">
-    <%= f.label :subject_code %><br />
+<div class="field">
+    <%= f.label :subject_code %><br/>
     <%= f.text_field :subject_code %>
   </div>
   <div class="field">
